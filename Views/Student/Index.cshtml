@@ -1,0 +1,136 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<MVCDemoProject.Models.Student>
+
+<link href="~/Content/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-ui-1.10.4.custom.min.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $("#textSearch").autocomplete({
+            source: '@Url.Action("GetStudents")',
+            minLength: 2
+        });
+    });
+</script>
+
+@{
+    ViewBag.Title = "Student List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Students</h2>
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success btn-sm" })
+</p>
+
+<div class="row">
+    <div class="col-md-6">
+        @using (Html.BeginForm("Index", "Student", FormMethod.Get, new { @class = "form-inline" }))
+        {
+            <div class="form-group">
+                <label class="mr-2"><strong>Search By:</strong></label>
+                <div class="form-check form-check-inline">
+                    @Html.RadioButton("searchBy", "Name", false, new { @class = "form-check-input" })
+                    <label class="form-check-label">Name</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    @Html.RadioButton("searchBy", "Gender", false, new { @class = "form-check-input" })
+                    <label class="form-check-label">Gender</label>
+                </div>
+            </div>
+            <div class="form-group ml-3">
+                @Html.TextBox("search", null, new { @class = "form-control", id = "textSearch" })
+                <br />
+                <button type="submit" class="btn btn-primary ml-2">Search</button>
+            </div>
+        }
+    </div>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="col-md-6">
+        <nav>
+            <ul class="pagination">
+                @if (Model.PageCount > 1)
+                {
+                    <li class="page-item @(Model.PageNumber == 1 ? "disabled" : "")">
+                        <a class="page-link" href="@Url.Action("Index", new { page = 1, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] })">&laquo;</a>
+                    </li>
+                    for (int i = 1; i <= Model.PageCount; i++)
+                    {
+                        <li class="page-item @(Model.PageNumber == i ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("Index", new { page = i, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] })">@i</a>
+                        </li>
+                    }
+                    <li class="page-item @(Model.PageNumber == Model.PageCount ? "disabled" : "")">
+                        <a class="page-link" href="@Url.Action("Index", new { page = Model.PageCount, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] })">&raquo;</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<table class="table table-hover">
+    @if (Model.Count() == 0)
+    {
+        <tr>
+            <td colspan="4"><em>No record(s) found.</em></td>
+        </tr>
+    }
+    else
+    {
+        <tr class="table-dark">
+            <th>
+                @Html.DisplayNameFor(model => model.First().StudentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().StudentId)
+            </th>
+            <th></th>
+        </tr>
+
+        foreach (var item in Model)
+        {
+            <tr class="table-active">
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentId)
+                </td>
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        @Html.ActionLink("Edit", "Edit", new { name = item.StudentName }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Details", "Details", new { name = item.StudentName }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Delete", "Delete", new { name = item.StudentName }, new { @class = "btn btn-danger" })
+                    </div>
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+<div>
+    Show
+    @Html.DropDownList("pageSize", new List<SelectListItem>
+    {
+        new SelectListItem { Text = "5", Value = "5" },
+        new SelectListItem { Text = "10", Value = "10" },
+        new SelectListItem { Text = "20", Value = "20" },
+        new SelectListItem { Text = "50", Value = "50" },
+        new SelectListItem { Text = "100", Value = "100" }
+    })
+    items per page
+</div>

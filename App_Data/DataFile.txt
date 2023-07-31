@@ -1,0 +1,106 @@
+Familiarized First:
+* Variables (/)
+* Classes (/)
+* for Loops (/)
+* Arrays Maps (/)
+* Object Oriented Programming (OOP) (/)
+
+Need to Read: as per Yawba
+* Class (/)
+* Function (/)
+* Inheritance (/)
+* Interface Class (/)
+* Dependency Injection (x)
+* Controller (/)
+* Model (/)
+* View (/)
+* MVC Architecture (/)
+* NTier Architecture (/)
+* SPA (Single Page Application) (/)
+* JSON (JavaScript Object Notation) Advantage (/)
+* MVC Razor (/)
+* XML (eXtensible Markup Language) (/)
+* AJAX (Asynchronous JavaScript And XML) (/)
+* MVC Framework (/)
+* ASP.Net (Active Server Pages Network Enabled Technologies) (/)
+* ASP.Net MVC (/)
+* ASP.Net Core 
+* ASP.Net Core MVC (/)
+* .NET Framework Notes Page (/)
+* Bootstrap 3 (/)
+* Bootstrap 4 (/)
+* Bootstrap 5 (/)
+
+* 2nd After of Actual Excercise 
+1. SOLID
+	S.O.L.I.D. Principle
+	* Single Responsibility
+	* Open for extension, Close for modification
+	* Liskov's Substitution
+	* Interface Segregation
+	* Dependency Inversion
+2. Entity Framework
+3. SQL
+4. View/UI
+5. API's
+6. Microservices
+7. N-Tier
+8. DAL
+9. BAL
+10. DBContext
+
+* Repository / Services
+
+4 Basic Programming Principles:
+* KISS (Keep It Simple, Stupid / Keep It Simple & Short)
+* DAMP (Descriptive And Meaningful Phrases)
+* WET (Write Everything Twice)
+* DRY (Do not Repeat Yourself)
+
+Other Lecture:
+* Project/Solution Structure
+* Authentication and Authorization
+* Cookies, Session, ViewBag, ViewData and TempData, Cache
+* Bunding & Minification
+* Logging
+* Mapping
+* Global Error Handler / Error Pages
+* Unit Test Mocking / Fluent Assertion
+* MS Report Viewer (PDF, Doc, Excel)
+* Razor Pages
+* KnockoutJS
+* Blazor
+
+JOSEPHORQUITA02\SQLEXPRESS
+
+"Java can't see sharp (C#)"
+"Codes are better than words"
+"It doesn't matter when you started. As long as you keep going. You will win."
+
+>> Handling 404 not found in asp net core mvc
+https://www.youtube.com/watch?v=QiF3eJ4Zb0o&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=57
+
+>> Learn SQL: SQL Tutorial for Beginners
+https://www.programiz.com/sql
+
+>> Learn SQL (Standard Query Language) for Databases
+https://www.tutorialsteacher.com/sql
+
+>> Learn SQL Server
+https://www.tutorialsteacher.com/sqlserver
+
+>> Jobstreet basic requirement for Programmer / Developer / Software Engineer
+Required Skill(s):
+* Visual Basic 6.0 to Net
+* C#
+* .NET
+* PL/SQL / MS SQL / MySQL / Postgres / PostgreSQL
+* Oracle Forms and Reports
+* Java
+
+Laptop Remedy:
+>> How to turn Old Laptop Screen into External Desktop Monitor
+https://www.youtube.com/watch?v=6L0TPJEXiAI
+
+>> Laptop screen replacement Lenovo G500s, G505s
+https://www.youtube.com/watch?v=i3KcW_9txtU

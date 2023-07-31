@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<main aria-labelledby="title">
+    <h1 id="title">@ViewBag.Title</h1>
+    <h3>@ViewBag.Message</h3>
+
+    <p>Use this area to provide additional information.</p>
+</main>
+
+@{
+    var dataFile = Server.MapPath("~/App_Data/DataFile.txt");
+    Array userData = File.ReadAllLines(dataFile);
+}
+
+<h2>Reading Data from a File</h2>
+@foreach (string dataLine in userData)
+{
+    foreach (string dataItem in dataLine.Split(','))
+    {@dataItem <text>&nbsp;</text>}
+<br />
+}
