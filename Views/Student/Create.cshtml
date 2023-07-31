@@ -1,4 +1,4 @@
-﻿@model MVCDemoProject.Models.Student
+@model MVCDemoProject.Models.Student
 
 @{
     ViewBag.Title = "Create";
@@ -41,7 +41,7 @@
             @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
         </div>
     </div>
-
+    <br />
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Create" class="btn btn-outline-success" />
@@ -49,7 +49,7 @@
     </div>
 </div>
 }
-
+<br />
 <div>
     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm" })
 </div>
